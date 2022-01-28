@@ -1,5 +1,5 @@
-import Data.List
-import System.IO 
+import Data.List ()
+import System.IO () 
 
 -- main is a function that allows compiled code to run outside compiler
 -- do chains commands and stores inside of main
@@ -16,6 +16,7 @@ import System.IO
 addMe :: Int -> Int -> Int
 addMe x y = x + y
 -- type declarations are not required
+sumMe :: Num a => a -> a -> a
 sumMe x y = x + y
 
 addTuples :: (Int, Int) -> (Int, Int) -> (Int, Int)
@@ -44,6 +45,7 @@ factorial n = n * factorial (n -1)
     3 * 2 = 6
 -}
 -- another way to do factorial
+prodFact :: (Num a, Enum a) => a -> a
 prodFact n = product [1..n]
 
 -- guards are denoted by the | and used like switch statement if/else type statements
@@ -53,6 +55,7 @@ isOdd n -- take n
     | n `mod` 2 == 0 = False -- if this condition
     | otherwise = True -- else this condition
 -- simpler method
+isEven :: Integral a => a -> Bool
 isEven n = n`mod` 2 == 0
 -- string method
 evenOrOdd :: Int -> String
